@@ -1,0 +1,14 @@
+# import * from "types.graphql"
+
+type Query {
+  hello: String
+  quoteOfTheDay: String
+  random: Float!
+  rollThreeDice: [Int!]
+  whatsUp: String
+  rollDice(numDice: Int!, numSides: Int!): [Int]
+  getDie(numDice: Int!): RandomDie
+  getMessage(id: ID!): Message
+  isLogin: Boolean!
+  loggedInUser: UserDetails
+}

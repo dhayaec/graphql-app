@@ -1,0 +1,10 @@
+# import * from "types.graphql"
+
+type Mutation {
+  createMessage(input: MessageInput): Message
+  updateMessage(id: ID!, input: MessageInput): Message
+  deleteMessage(id: ID!): String
+  login(username: String!, password: String!): Boolean!
+  signup(username: String!, password: String!): Boolean!
+  logout: Boolean!
+}
