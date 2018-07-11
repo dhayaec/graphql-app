@@ -1,10 +1,10 @@
+require('pretty-error').start();
 const path = require('path');
 const { GraphQLServer } = require('graphql-yoga');
 const { importSchema } = require('graphql-import');
 const session = require('express-session');
 const ms = require('ms');
 const resolvers = require('./resolvers/resolvers');
-require('pretty-error').start();
 
 const typeDefs = importSchema(path.join(__dirname, './schemas/schema.graphql'));
 
@@ -13,6 +13,13 @@ const context = req => ({
 });
 
 const server = new GraphQLServer({ typeDefs, resolvers, context });
+
+server.get('/', (req, res) => {
+  const date = new Date();
+  res.json({
+    message: `welcome to api server ${`${date.toLocaleDateString()} ${date.toLocaleTimeString()}`}`
+  });
+});
 
 const options = {
   port: 4000,
