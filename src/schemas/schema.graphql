@@ -8,7 +8,7 @@ type Query {
   getDie(numDice: Int!): RandomDie
   getMessage(id: ID!): Message
   isLogin: Boolean!
-  loggedInUser: User
+  loggedInUser: UserDetails
 }
 
 type Mutation {
@@ -20,9 +20,8 @@ type Mutation {
   logout: Boolean!
 }
 
-type User {
+type UserDetails {
   username: String
-  password: String
 }
 
 type RandomDie {

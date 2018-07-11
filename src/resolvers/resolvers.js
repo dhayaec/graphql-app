@@ -61,7 +61,7 @@ module.exports = {
       if (user) {
         if (await bcrypt.compareSync(password, user.password)) {
           req.session.user = {
-            ...user
+            username
           };
           return true;
         }
