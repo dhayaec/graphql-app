@@ -4,6 +4,7 @@ const { importSchema } = require('graphql-import');
 const session = require('express-session');
 const ms = require('ms');
 const resolvers = require('./resolvers/resolvers');
+require('pretty-error').start();
 
 const typeDefs = importSchema(path.join(__dirname, './schemas/schema.graphql'));
 
