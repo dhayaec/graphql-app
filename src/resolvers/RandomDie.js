@@ -1,6 +1,6 @@
-const { times } = require('./utils');
+const { times } = require('../utils');
 
-export default class RandomDie {
+class RandomDie {
   constructor(numSides) {
     this.numSides = numSides;
   }
@@ -13,3 +13,5 @@ export default class RandomDie {
     return times(numRolls).map(() => this.rollOnce());
   }
 }
+
+module.exports = RandomDie;

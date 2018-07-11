@@ -1,2 +1,7 @@
-export const times = n => [...Array(n).keys()];
-export const add = (a, b) => a + b;
+const times = n => [...Array(n).keys()];
+const add = (a, b) => a + b;
+
+module.exports = {
+  times,
+  add
+};
