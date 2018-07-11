@@ -1,7 +1,7 @@
 const path = require('path');
 const { GraphQLServer } = require('graphql-yoga');
 const { importSchema } = require('graphql-import');
-const resolvers = require('./resolvers');
+const resolvers = require('./resolvers/resolvers');
 
 const typeDefs = importSchema(path.join(__dirname, './schemas/schema.graphql'));
 

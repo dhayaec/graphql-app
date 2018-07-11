@@ -1,4 +1,4 @@
-const RandomDie = require('./RandomDie');
+const RandomDie = require('./RandomDie').default;
 const { times } = require('../utils');
 
 module.exports = {
