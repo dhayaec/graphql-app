@@ -6,7 +6,8 @@ const session = require('express-session');
 const ms = require('ms');
 const resolvers = require('./resolvers/resolvers');
 
-const typeDefs = importSchema(path.join(__dirname, './schemas/schema.graphql'));
+const schemaFilePath = path.join(__dirname, './schemas/schema.graphql');
+const typeDefs = importSchema(schemaFilePath);
 
 const context = req => ({
   req: req.request
@@ -15,9 +16,10 @@ const context = req => ({
 const server = new GraphQLServer({ typeDefs, resolvers, context });
 
 server.get('/', (req, res) => {
-  const date = new Date();
+  const d = new Date();
+  const dateStr = `${d.toLocaleDateString()} ${d.toLocaleTimeString()}`;
   res.json({
-    message: `welcome to api server ${`${date.toLocaleDateString()} ${date.toLocaleTimeString()}`}`
+    message: `welcome to api server ${dateStr}`
   });
 });
 
