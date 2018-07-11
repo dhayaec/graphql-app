@@ -1,0 +1,15 @@
+type Query {
+  hello: String
+  quoteOfTheDay: String
+  random: Float!
+  rollThreeDice: [Int!]
+  whatsUp: String
+  rollDice(numDice: Int!, numSides: Int!): [Int]
+  getDie(numDice: Int!): RandomDie
+}
+
+type RandomDie {
+  numSides: Int!
+  rollOnce: Int!
+  roll(numRolls: Int!): [Int!]
+}
