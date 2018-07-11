@@ -4,7 +4,7 @@ const { GraphQLServer } = require('graphql-yoga');
 const { importSchema } = require('graphql-import');
 const session = require('express-session');
 const ms = require('ms');
-const resolvers = require('./resolvers/resolvers');
+const resolvers = require('./resolvers');
 
 const schemaFilePath = path.join(__dirname, './schemas/schema.graphql');
 const typeDefs = importSchema(schemaFilePath);

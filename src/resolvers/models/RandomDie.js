@@ -1,4 +1,4 @@
-const { times } = require('../utils');
+const { times } = require('../../utils');
 
 class RandomDie {
   constructor(numSides) {
